@@ -1,0 +1,355 @@
+
+/* General page styling */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0c101a;
+  color: #f7f1e9;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+button, input, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.page {
+  width: 100%;
+  max-width: 1180px;
+  padding: 36px 22px 20px;
+  margin: auto;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(
+    120deg,
+    #28243a,
+    #191f32 65%,
+    #24222f
+  );
+  border: 1px solid #3c394a;
+  border-radius: 24px;
+  padding: 48px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::after {
+  content: "★";
+  position: absolute;
+  right: 38px;
+  top: -88px;
+  font-size: 270px;
+  color: rgba(255, 196, 117, 0.08);
+  pointer-events: none;
+}
+
+.brand {
+  color: #f6be7a;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 24px;
+}
+
+.brand-icon {
+  font-size: 21px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: normal;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0 0 16px;
+}
+
+.header p {
+  color: #c4bfcc;
+  max-width: 540px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Main layout */
+.content {
+  display: grid;
+  grid-template-columns: 390px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.panel, .movie-card {
+  background: #171d2a;
+  border: 1px solid #303849;
+  border-radius: 18px;
+}
+
+.add-panel {
+  padding: 28px;
+}
+
+.section-heading,
+.watchlist-heading,
+.movie-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.section-heading {
+  margin-bottom: 24px;
+}
+
+.eyebrow, .review-label {
+  color: #f4b875;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0 0 10px;
+}
+
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+  font-size: 27px;
+  margin: 0;
+}
+
+.heading-emoji {
+  font-size: 32px;
+}
+
+/* Form labels and inputs */
+label {
+  display: block;
+  margin: 18px 0 9px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #e9e7eb;
+}
+
+input, textarea {
+  display: block;
+  width: 100%;
+  padding: 13px 14px;
+  color: #fffaf2;
+  background: #101521;
+  border: 1px solid #3b4355;
+  border-radius: 10px;
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #969caf;
+}
+
+input:focus, textarea:focus {
+  border-color: #f4b875;
+  box-shadow: 0 0 0 3px rgba(244, 184, 117, 0.16);
+}
+
+textarea {
+  resize: vertical;
+  line-height: 1.5;
+}
+
+/* Star rating buttons */
+.star-picker {
+  display: flex;
+  gap: 6px;
+}
+
+.star-button {
+  background: #242b3a;
+  border: 1px solid #424859;
+  border-radius: 9px;
+  color: #ffdc91;
+  font-size: 24px;
+  flex: 1;
+  min-width: 0;
+  min-height: 47px;
+}
+
+.star-button:hover,
+.star-button:focus-visible {
+  background: #393747;
+  border-color: #f4b875;
+}
+
+.rating-hint {
+  color: #aeb4c2;
+  font-size: 12px;
+  margin: 12px 0 22px;
+}
+
+/* Add movie button */
+.add-button {
+  width: 100%;
+  border: 0;
+  background: #f4b875;
+  color: #1a1b25;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.add-button:hover:enabled {
+  background: #ffd39f;
+}
+
+.add-button:disabled {
+  background: #62616a;
+  color: #dcdae0;
+  cursor: not-allowed;
+}
+
+/* Movie list heading */
+.watchlist-heading {
+  align-items: center;
+  margin: 8px 0 21px;
+}
+
+.movie-count {
+  background: #343047;
+  color: #ffd49c;
+  border: 1px solid #524461;
+  padding: 9px 13px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.movie-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Movie cards */
+.movie-card {
+  border-left: 5px solid #f4b875;
+  padding: 24px;
+}
+
+.movie-card h3 {
+  margin: 0 0 13px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.movie-rating {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-size: 20px;
+}
+
+.rating-number {
+  margin-left: 9px;
+  color: #f4b875;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Remove button */
+.delete-button {
+  border: 1px solid #63404c;
+  background: #37232e;
+  color: #ffc7c4;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 12px;
+}
+
+.delete-button:hover {
+  background: #54313b;
+}
+
+/* Review text */
+.review-label {
+  margin: 28px 0 9px;
+}
+
+.movie-review {
+  color: #c9cbd4;
+  line-height: 1.7;
+  font-size: 14px;
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* Empty movie list */
+.empty-state {
+  text-align: center;
+  padding: 55px 20px;
+}
+
+.empty-emoji {
+  font-size: 46px;
+}
+
+.empty-state h3 {
+  font-size: 24px;
+  margin: 12px 0;
+}
+
+.empty-state p {
+  color: #c4bfcc;
+}
+
+/* Footer */
+footer {
+  color: #9ba0ae;
+  text-align: center;
+  font-size: 12px;
+  margin: 38px 0 12px;
+}
+
+/* Tablet screens */
+@media (max-width: 830px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    padding: 32px 26px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+  .page {
+    padding: 16px 12px;
+  }
+
+  .header {
+    padding: 28px 20px;
+  }
+
+  .add-panel, .movie-card {
+    padding: 20px;
+  }
+
+  .watchlist-heading {
+    align-items: flex-start;
+  }
+}
